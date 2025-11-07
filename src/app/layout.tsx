@@ -1,5 +1,7 @@
+// src/app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
+import Deco from "@/components/Deco";
 
 export const metadata: Metadata = {
   title: "Manoj Kumar — Portfolio",
@@ -11,6 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <div className="site-bg" />
+        <Deco />  {/* ✅ Decorative gold gradient lines remain */}
         {children}
       </body>
     </html>

@@ -1,3 +1,6 @@
+// src/components/GitHubFeed.tsx
+export const revalidate = 3600; // cache for 1 hour to avoid rate limits
+
 import { getTopRepos } from "@/lib/github";
 
 export default async function GitHubFeed() {
@@ -15,6 +18,7 @@ export default async function GitHubFeed() {
           <div className="mt-3 flex flex-wrap items-center gap-3 text-sm opacity-85">
             {repo.language ? <span>{repo.language}</span> : null}
             <span>★ {repo.stargazers_count}</span>
+            <span>Updated: {new Date(repo.updated_at).toLocaleDateString()}</span>
           </div>
           <div className="mt-4">
             <a className="btn" href={repo.html_url} target="_blank" rel="noreferrer">View on GitHub</a>
