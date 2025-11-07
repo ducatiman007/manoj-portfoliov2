@@ -8,8 +8,6 @@ import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 import { education, certificates } from "@/data/profile";
 import GitHubFeed from "@/components/GitHubFeed";
-
-// ✅ NEW IMPORTS
 import Stats from "@/components/Stats";
 import FeatureGrid from "@/components/FeatureGrid";
 
@@ -19,11 +17,10 @@ export default function Home() {
       <Header />
 
       {/* HERO */}
-      <section className="section pt-24">
+      <section className="section pt-24" id="home">
         <div className="grid md:grid-cols-[auto,1fr] items-center gap-8">
           {/* Avatar */}
           <div className="flex md:block justify-center">
-            {/* ✅ sparkle-wrap added and image src switched to /profile.jpg */}
             <div className="avatar-wrap sparkle-wrap">
               <Image src="/profile.jpeg" alt="Manoj" width={180} height={180} className="avatar" priority />
             </div>
@@ -66,7 +63,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ✅ NEW: Stats + FeatureGrid directly after Projects */}
+      {/* EXTRA SECTIONS RIGHT AFTER PROJECTS */}
       <Stats />
       <FeatureGrid />
 
@@ -135,10 +132,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT */}
+      {/* CONTACT (Info + Form) */}
       <section id="contact" className="section pb-24">
         <h2 className="section-title">Contact</h2>
-        <div className="card p-6 mt-4">
+
+        {/* Contact Info */}
+        <div className="mt-6 card p-6">
+          <div className="shine" />
+          <p className="opacity-85">
+            Email: <a className="underline underline-offset-2" href="mailto:manojkumarleo891@gmail.com">
+              manojkumarleo891@gmail.com
+            </a>
+          </p>
+
+          <p className="opacity-85 mt-2">
+            Phone: <a className="underline underline-offset-2" href="tel:+918073353239">
+              8073353239
+            </a>
+          </p>
+
+          <p className="opacity-85 mt-2">
+            Instagram: <a className="underline underline-offset-2" href="https://www.instagram.com/sebarrex/">
+              @sebarrex
+            </a>
+          </p>
+        </div>
+
+        {/* Contact Form */}
+        <div className="card p-6 mt-6">
           <div className="shine" />
           <ContactForm />
         </div>
